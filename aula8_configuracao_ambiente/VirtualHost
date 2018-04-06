@@ -1,0 +1,40 @@
+em /etc/apache2/sites-available criamos um file api.conf com conteudo:
+
+        # utilizar porta 80
+
+        Listen 80
+
+        #aceitar pedidios HTTP de todos os ip na porta 80
+
+        NameVirtualHost *:80
+
+        #configurando o virtual host para root especifica e nome do server,
+
+        <VirtualHost *:80>
+        DocumentRoot /home/developer/Área de trabalho/www/html/502/aula7_Webservices/alunos-api
+        ServerName api.4linux.com
+        </VirtualHost>
+
+
+logo vamos pro /etc/hosts e acrecentamos o endereço api.4linux.com para 127.0.0.1
+
+logo em /etc/apache2/sites-available rodamos a2ensite api.conf e restartamos o apache2
+
+mais configuracoes
+
+Listen 80
+
+NameVirtualHost *:80
+
+<VirtualHost *:80>
+DocumentRoot /var/www/html/502/aula7_Webservices/alunos-api
+ServerName api.4linux.com
+
+
+<Directory /var/www/html/502/aula7_Webservices/alunos-api>
+Options - Indexes FollowSymlinks -> cria um indice de arquivos
+AllowOverride All -> permite leitura do arquivo htaccess
+
+</Directory>
+
+</VirtualHost>
