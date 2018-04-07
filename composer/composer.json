@@ -1,0 +1,17 @@
+{
+    "name": "peppe/composer",
+    "description": "Iniciando com o composer",
+    "type": "project",
+    "authors": [
+        {
+            "name": "peppe",
+            "email": "hdclsd@yahoo.it"
+        }
+    ],
+    "require": {
+        "silex/silex": "~2.0"
+    },
+    "autoload": {
+        "psr-4": {"Forlinux\\": "src/"}
+    }
+}
