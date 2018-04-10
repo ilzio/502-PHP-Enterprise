@@ -1,0 +1,22 @@
+inserir uma linha no json do Composer
+
+--> o nome do namespace e' 4linux nesse caso
+
+{
+    "name": "peppe/composer",
+    "description": "Iniciando com o composer",
+    "type": "project",
+    "authors": [
+        {
+            "name": "peppe",
+            "email": "hdclsd@yahoo.it"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {"4linux\\": "src/"}
+    }
+}
+
+
+--> quando modificar rodar composer dumpautoload

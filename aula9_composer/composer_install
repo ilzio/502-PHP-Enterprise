@@ -1,0 +1,58 @@
+Instalacao composer
+
+    1)php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+    2)-> pode mudar!!! ->> php -r "if (hash_file('SHA384', 'composer-setup.php') === '544e09ee996cdf60ece3804abc52599c22b1f40f4323403c44d44fdfdd586475ca9813a858088ffbc1f233e9b180f061') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+    3)php composer-setup.php
+    4)php -r "unlink('composer-setup.php');"
+    5)mv composer.phar  /usr/bin/composer
+
+Comandos
+
+    composer selfupdate
+
+Iniciando composer
+
+    developer@developer:/var/www/html/502/composer$ composer init
+
+
+      Welcome to the Composer config generator
+
+
+
+    This command will guide you through creating your composer.json config.
+
+    Package name (<vendor>/<name>) [developer/composer]: peppe/composer
+    Description []: Iniciando
+    Author [peppe <hdclsd@yahoo.it>, n to skip]:
+    Minimum Stability []:
+    Package Type (e.g. library, project, metapackage, composer-plugin) []: project
+    License []:
+
+    Define your dependencies.
+
+    Would you like to define your dependencies (require) interactively [yes]? no
+    Would you like to define your dev dependencies (require-dev) interactively [yes]? no
+
+    {
+        "name": "peppe/composer",
+        "description": "Iniciando",
+        "type": "project",
+        "authors": [
+            {
+                "name": "peppe",
+                "email": "hdclsd@yahoo.it"
+            }
+        ],
+        "require": {}
+    }
+
+    Do you confirm generation [yes]?
+
+--> agora tem um arquivo json que contem essas instruccoes
+
+ADICIONANDO DEPENDENCIAS NO PROJETO
+
+No packagist pode baixar pacotes o usar comando no terminal
+  Exemplo -> composer require laravel/lumen-framework
+  -> atualiza composer.json
+  -> cria arquivo composer.log que

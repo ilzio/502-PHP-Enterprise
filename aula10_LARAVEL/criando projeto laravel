@@ -1,0 +1,52 @@
+## Iniciando projeto Laravel 5.4
+
+```
+cd /var/www/html/
+
+composer create-project --prefer-dist laravel/laravel api4linux "5.4.*"
+
+cd api4linux/
+
+touch storage/logs/laravel.log
+
+chmod 777 -R storage/
+```
+
+## Criando Virtual Host
+```
+sudo touch /etc/apache2/sites-available/laravel.conf
+
+sudo subl /etc/apache2/sites-available/laravel.conf
+```
+### VHost
+```
+<VirtualHost *:80>
+	DocumentRoot /var/www/html/api4linux/public/
+	ServerName api.laravel
+
+	<Directory /var/www/html/api4linux/public/>
+		Options FollowSymLinks
+		AllowOverride All
+		Allow from all
+	</Directory>
+
+</VirtualHost>
+```
+### Habilitando VHost
+```
+sudo a2ensite /etc/apache2/sites-available/laravel.conf
+
+sudo service apache2 restart
+```
+
+### Adicionar no etc/host
+```
+sudo subl /etc/hosts
+```
+#### No final do arquivo
+```
+127.0.0.1 api.laravel
+```
+```
+sudo service apache2 restart
+```
